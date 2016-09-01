@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		C8546C041D78B7320066D0A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8546C031D78B7320066D0A2 /* AppDelegate.swift */; };
-		C8546C061D78B7320066D0A2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8546C051D78B7320066D0A2 /* FirstViewController.swift */; };
-		C8546C081D78B7320066D0A2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8546C071D78B7320066D0A2 /* SecondViewController.swift */; };
 		C8546C0B1D78B7320066D0A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8546C091D78B7320066D0A2 /* Main.storyboard */; };
 		C8546C0D1D78B7330066D0A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8546C0C1D78B7330066D0A2 /* Assets.xcassets */; };
 		C8546C101D78B7330066D0A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8546C0E1D78B7330066D0A2 /* LaunchScreen.storyboard */; };
+		C8546C181D78C2320066D0A2 /* DynamicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8546C171D78C2320066D0A2 /* DynamicTableViewController.swift */; };
+		C8546C1A1D78C2470066D0A2 /* StaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8546C191D78C2470066D0A2 /* StaticTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C8546C001D78B7320066D0A2 /* JvbDynamicTypeTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JvbDynamicTypeTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8546C031D78B7320066D0A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8546C051D78B7320066D0A2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		C8546C071D78B7320066D0A2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C8546C0A1D78B7320066D0A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8546C0C1D78B7330066D0A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8546C0F1D78B7330066D0A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8546C111D78B7330066D0A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8546C171D78C2320066D0A2 /* DynamicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTableViewController.swift; sourceTree = "<group>"; };
+		C8546C191D78C2470066D0A2 /* StaticTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +57,9 @@
 			isa = PBXGroup;
 			children = (
 				C8546C031D78B7320066D0A2 /* AppDelegate.swift */,
-				C8546C051D78B7320066D0A2 /* FirstViewController.swift */,
-				C8546C071D78B7320066D0A2 /* SecondViewController.swift */,
 				C8546C091D78B7320066D0A2 /* Main.storyboard */,
+				C8546C171D78C2320066D0A2 /* DynamicTableViewController.swift */,
+				C8546C191D78C2470066D0A2 /* StaticTableViewController.swift */,
 				C8546C0C1D78B7330066D0A2 /* Assets.xcassets */,
 				C8546C0E1D78B7330066D0A2 /* LaunchScreen.storyboard */,
 				C8546C111D78B7330066D0A2 /* Info.plist */,
@@ -140,9 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8546C081D78B7320066D0A2 /* SecondViewController.swift in Sources */,
+				C8546C181D78C2320066D0A2 /* DynamicTableViewController.swift in Sources */,
+				C8546C1A1D78C2470066D0A2 /* StaticTableViewController.swift in Sources */,
 				C8546C041D78B7320066D0A2 /* AppDelegate.swift in Sources */,
-				C8546C061D78B7320066D0A2 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
