@@ -194,6 +194,8 @@
                         <outletCollection property="labelsThatWeWantToBeConformToDynamicType" destination="hWz-gm-EwI" collectionClass="NSMutableArray" id="5ed-tN-Kfd"/>
                         <outletCollection property="labelsThatWeWantToBeConformToDynamicType" destination="TWf-M2-KMp" collectionClass="NSMutableArray" id="zlb-qp-3EL"/>
                         <outletCollection property="labelsThatWeWantToBeConformToDynamicType" destination="f7P-O4-ORF" collectionClass="NSMutableArray" id="ktD-du-ayE"/>
+                        <outletCollection property="labelsThatWeWantToBeConformToDynamicType" destination="hWz-gm-EwI" collectionClass="NSMutableArray" id="6gQ-Ow-Afx"/>
+                        <outletCollection property="labelsThatWeWantToBeConformToDynamicType" destination="hWz-gm-EwI" collectionClass="NSMutableArray" id="zmc-8M-exo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNT-wv-bit" userLabel="First Responder" sceneMemberID="firstResponder"/>

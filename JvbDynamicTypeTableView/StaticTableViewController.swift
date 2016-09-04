@@ -19,11 +19,25 @@ class StaticTableViewController: UITableViewController {
         //support dynamic row height. For a static tableView we also need to implement and override 'heightForRowAtIndexPath'. Setting the rowHeight property won't do here.
         tableView.estimatedRowHeight = 44
 
-        //add observer for dynamic type
-        NotificationCenter.default.addObserver(self,
-                    selector: #selector(changeInPreferredContentSize),
-                    name: NSNotification.Name.UIContentSizeCategoryDidChange,
-                    object: nil)
+        
+        if #available(iOS 10.0, *){
+            
+            for label in labelsThatWeWantToBeConformToDynamicType{
+                
+                label.adjustsFontForContentSizeCategory = true
+            }
+            
+        }
+        else{
+            
+            //add observer for dynamic type (for iOS 9 and below)
+            NotificationCenter.default.addObserver(self,
+                        selector: #selector(changeInPreferredContentSize),
+                        name: NSNotification.Name.UIContentSizeCategoryDidChange,
+                        object: nil)
+    
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
