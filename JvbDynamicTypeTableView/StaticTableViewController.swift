@@ -9,15 +9,21 @@
 import UIKit
 
 class StaticTableViewController: UITableViewController {
-
+    
+    //this is an outlet collection which holds all the labels in the 'correct' section
+    @IBOutlet var labelsThatWeWantToBeConformToDynamicType: [UILabel]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        //support dynamic row height. For a static tableView we also need to implement and override 'heightForRowAtIndexPath'. Setting the rowHeight property won't do here.
+        tableView.estimatedRowHeight = 44
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //add observer for dynamic type
+        NotificationCenter.default.addObserver(self,
+                    selector: #selector(changeInPreferredContentSize),
+                    name: NSNotification.Name.UIContentSizeCategoryDidChange,
+                    object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,71 +31,27 @@ class StaticTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    //to get the expected self-sizing behavior in a static UITableView, we can't just set the rowheight property like we did in the dynamic UITableView
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+    
+    
+    //this wil be called as soon as a notification of a change in font size is received.
+    func changeInPreferredContentSize(notification: NSNotification){
+        
+        //every label in our outlet collection will be adjusted to the new preferred font size
+        for label in labelsThatWeWantToBeConformToDynamicType{
+            label.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        }
 
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    deinit {
+        //remove observer
+        NotificationCenter.default.removeObserver(self)
     }
-    */
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }

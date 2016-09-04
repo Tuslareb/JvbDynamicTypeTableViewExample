@@ -10,10 +10,14 @@ import UIKit
 
 class DynamicTableViewController: UITableViewController {
     
-    let cars = ["Alfa Romeo", "BMW", "Citroën", "Daihatsu", "Evasion", "Ferrari", "Gullwing", "Hummer", "Iso", "Just don't know", "Koenigsegg", "Lancia", "Maserati", "Nissan", "Oldsmobile", "Paccar", "Quasimodo", "Reliant", "Saab", "Toyota", "Ulysse", "Volkswagen", "Wartburg", "Xantia", "Yugo", "Zastava"]
+    let cars = ["Alfa Romeo", "BMW", "Citroën", "Daihatsu", "Evasion", "Ferrari", "Gullwing", "Hummer", "Iso", "Jaeger", "Koenigsegg", "Lancia", "Maserati", "Nissan", "Oldsmobile", "Paccar", "Quasimodo", "Reliant", "Saab", "Toyota", "Ulysse", "Volkswagen and more to go", "Wartburg", "Xantia", "Yugo", "Zastava"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //support dynamic row height
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +44,8 @@ class DynamicTableViewController: UITableViewController {
 
         return cell
     }
+
+    
 
 
     
