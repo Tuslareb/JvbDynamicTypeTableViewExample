@@ -11,7 +11,7 @@ import UIKit
 class StaticTableViewController: UITableViewController {
     
     //this is an outlet collection which holds all the labels in the 'correct' section
-    @IBOutlet var labelsThatWeWantToBeConformToDynamicType: [UILabel]!
+    @IBOutlet var labelsThatWeWantToConformToDynamicType: [UILabel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class StaticTableViewController: UITableViewController {
         
         if #available(iOS 10.0, *){
             
-            for label in labelsThatWeWantToBeConformToDynamicType{
+            for label in labelsThatWeWantToConformToDynamicType{
                 
                 label.adjustsFontForContentSizeCategory = true
             }
@@ -55,7 +55,7 @@ class StaticTableViewController: UITableViewController {
     func changeInPreferredContentSize(notification: NSNotification){
         
         //every label in our outlet collection will be adjusted to the new preferred font size
-        for label in labelsThatWeWantToBeConformToDynamicType{
+        for label in labelsThatWeWantToConformToDynamicType{
             label.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         }
 
